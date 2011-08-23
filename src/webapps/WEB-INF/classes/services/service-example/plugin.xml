@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="service-example"
+   name="Example Service Plug-in"
+   version="1.0.0"
+   provider-name="Oneline Initiative">
+
+   <runtime>
+      <library name="service-example.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="extensionpoints"/>
+   </requires>
+
+   <extension id="com.bizosys.oneline.services.example"
+              name="Hello World"
+              point="com.bizosys.oneline.services.Service">
+
+      <implementation id="service.example"
+                      class="com.bizosys.oneline.services.example.HelloWorld">
+
+        <parameter name="name" value="Example Service"/>
+        <parameter name="logo" value=""/>
+        <parameter name="tags" value="welcome"/>
+        <parameter name="url" value="service/example"/>
+      </implementation>
+
+   </extension>
+
+</plugin>

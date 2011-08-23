@@ -1,0 +1,36 @@
+1Min Tutorial - Run it
+----------------------
+Copy oneline.war file from / to tomcat webapps folder.
+Start tomcat.
+Access an example service from browser.
+http://localhost/oneline/service.html?service=service.example&action=hello
+
+5Min Tutorial - Write a service
+---------------------------------------
+There is a sample service example inside src\services\service-example
+
+This finally gets deployed as
+	tomcat
+		\webapps
+			\oneline
+				\WEB-INF
+					\classes
+						\services
+							\service-example
+								\plugin.xml
+								\service-example.jar
+
+The example has a HelloWorld class.
+
+Copy this \service-example folder to another folder named \service-ABC
+Remove service-example.jar File
+Open \plugin.xml
+Change [service-example.jar] to [service-ABC.jar]
+Change [id="org.apache.oneline.services.example"] to [id="com.mycompany.ABC"]
+Change [name="Hello World"]  to [name="ABC"]
+Change [<implementation id="service.example"] to [<implementation id="service.ABC"]
+Change [class="org.apache.oneline.services.example.HelloWorld">] to [Abc]
+Create a class called Abc and implement org.apache.oneline.services.Service interface.
+Jar the class file to service-ABC.jar and keep inside \service-ABC folder.
+Restart Tomcat
+Access via http://localhost/oneline/service.html?service=service.ABC&action=KK

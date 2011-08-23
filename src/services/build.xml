@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project name="services" default="deploy " basedir=".">
+
+  <!-- ====================================================== -->
+  <!-- Build & deploy all the plugin jars.                    -->
+  <!-- ====================================================== -->
+	  <target name="deploy">
+	    <ant dir="extensionpoints" target="deploy"/>
+	  	<ant dir="service-example" target="deploy"/>
+	  </target>
+
+  <!-- ====================================================== -->
+  <!-- Test all of the plugins.                               -->
+  <!-- ====================================================== -->
+  <target name="test">
+    <parallel threadCount="2">
+    </parallel>
+  </target>
+
+  <!-- ====================================================== -->
+  <!-- Clean all of the plugins.                              -->
+  <!-- ====================================================== -->
+  <target name="clean">
+
+  </target>
+</project>
